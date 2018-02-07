@@ -111,7 +111,7 @@ A third method was tried, to keep drawing for a few frames boxes that are no lon
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./output_video/project_video.mp4)
+Here's a [link to my video result](./output_videos/project_video.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
@@ -123,12 +123,12 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ### Here are six frames their corresponding heatmaps, and the output of `scipy.ndimage.measurements.label()` on the  heatmap :
 
-![](./examples/heatmaps and labels.png)
-![](./examples/heatmaps and labels 2.png)
+![](./examples/heatmaps_and_labels.png)
+![](./examples/heatmaps_and_labels_2.png)
 
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![](./examples/bounding box.png)
+![](./examples/bounding_box.png)
 
 
 
@@ -140,7 +140,7 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 To be honest, this project was quite a frustrating experience for me, to the point it made me consider leaving the nanodegree. When the pipeline was not performing as expected, there were lots of changes that could be made, often with unexpected results (from too much detections to too few, from too big boxes to too small). Given the amount of fine-tuning it required to get OK performance on a particular video, I'm of the impression that I was in a way 'overfitting'. 
 
-I have to admit that I'm partial for Deep Learning based solutions. I tried to apply a YOLOv2 based classifier (implemented in a different course) with no optimizations for this particular video, and no data kept between frames, and [the results were almost perfect](./output_video/project_video.mp4) out of the box.
+I have to admit that I'm partial for Deep Learning based solutions. I tried to apply a YOLOv2 based classifier (implemented in a different course) with no optimizations for this particular video, and no data kept between frames, and [the results were almost perfect](./output_videos/project_video.mp4) out of the box.
 
 My final implementation does not use that many windows, but still, it's far from being able to work in real time. 
 
