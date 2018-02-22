@@ -14,11 +14,11 @@ The steps taken to achieve this goal were the following:
 
 The final result in a sample video can be seen below:
 
-[![IMAGE ALT TEXT](./examples/thumbnail_HOG.png)](https://youtu.be/xDNpGojr9jo "Vehicle detection with HOG features")
+[![Video - Vehicle detection with HOG features](./examples/thumbnail_HOG.png)](https://youtu.be/xDNpGojr9jo "Vehicle detection with HOG features")
 
 Additionally, a YOLO based pipeline with a pre-trained model was implemented as a reference of a deep learning approach:
 
-[![IMAGE ALT TEXT](./examples/thumbnail_YOLO.png)](https://youtu.be/Sz4yrw2QUgA "Vehicle detection with YOLO")
+[![Video - Vehicle detection with YOLO](./examples/thumbnail_YOLO.png)](https://youtu.be/Sz4yrw2QUgA "Vehicle detection with YOLO")
 
 ## Implementation details
 
@@ -77,7 +77,7 @@ To identify vehicles in an image, a sliding window search was implemented (from 
 
 Two searches are performed for each frame (line 123 in `vehicle_detection_pipeline.py`)). A wider one, in the area contained in the blue rectangle, with scale=2 (searching in 128x128px image patches), and 75% overlap, plus another focused on the further part of the frame (red box), with scale=1 and also 75% overlap.
 
-![](./examples/search boxes.png)
+![](./examples/search_boxes.png)
 
 This approach was the result of a lot of trial and error, balancing the detection performance and speed. Some of the discarded approaches were:
 
@@ -129,7 +129,7 @@ Here's an example result showing the heatmap from a series of frames of video, t
 Fine tuning detection with this approach can be difficult, as if the pipeline does not perform as expected, there are lots of changes that could be made, often with unpredictable results (from too much detections to too few, from too big boxes to too small). 
 
 As I'm partial for Deep Learning based solutions. I tried to apply a YOLOv2 based classifier (implemented in a different course) with no optimizations for this particular video, and blind search for each frame, and [the results were almost perfect](https://youtu.be/Sz4yrw2QUgA) out of the box: 
-[![IMAGE ALT TEXT](./examples/thumbnail_YOLO.png)](https://youtu.be/Sz4yrw2QUgA "Vehicle detection with YOLO")
+[![Vehicle detection with YOLO](./examples/thumbnail_YOLO.png)](https://youtu.be/Sz4yrw2QUgA "Vehicle detection with YOLO")
 
 I can identify lots of areas for improvement, if I were to continue working on this project: 
 
